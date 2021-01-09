@@ -17,17 +17,17 @@ class NetworkStackExamplesTests: XCTestCase {
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    func testHeightConversions() {
+        
+        // Yuk. This is less than ideal. In this simple case it works fine, but falls on it's face in more complex scenarios.
+        let vc = ViewController()
+        let responseHeight = "175" // Data from response is a string.
+        let centimeters = Double(responseHeight)!
+        let inches = vc.convertCentimetersToInches(centimeters: centimeters)
+        let feet = vc.convertInchesToFeet(inches: inches)
+        let outputString = "Height: \(vc.formatHeight(height: feet))ft"
+        
+        XCTAssertEqual(outputString, "Height: 5.7ft")
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
 }
