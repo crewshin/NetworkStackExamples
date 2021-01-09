@@ -28,6 +28,6 @@ class NetworkStackExamplesTests: XCTestCase {
         let feet = vc.convertInchesToFeet(inches: inches)
         let outputString = "Height: \(vc.formatHeight(height: feet))ft"
         
-        XCTAssertEqual(outputString, "Height: 5.7ft")
+        XCTAssertEqual(outputString, "Height: 5.74ft")
     }
 }
