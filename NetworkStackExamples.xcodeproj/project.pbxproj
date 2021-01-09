@@ -15,6 +15,9 @@
 		7E989D7E25A900B500F700BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E989D7C25A900B500F700BC /* LaunchScreen.storyboard */; };
 		7E989D8925A900B500F700BC /* NetworkStackExamplesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E989D8825A900B500F700BC /* NetworkStackExamplesTests.swift */; };
 		7E989DAB25A90C1700F700BC /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E989DAA25A90C1700F700BC /* Person.swift */; };
+		7E989DC025A9F5D600F700BC /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E989DBF25A9F5D600F700BC /* Networking.swift */; };
+		7E989DC525A9F89E00F700BC /* SWAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E989DC425A9F89E00F700BC /* SWAPI.swift */; };
+		7E989DC925A9F98A00F700BC /* ViewControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E989DC825A9F98A00F700BC /* ViewControllerViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +44,9 @@
 		7E989D8A25A900B500F700BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7E989DAA25A90C1700F700BC /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		7E989DB725A9F34D00F700BC /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		7E989DBF25A9F5D600F700BC /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		7E989DC425A9F89E00F700BC /* SWAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWAPI.swift; sourceTree = "<group>"; };
+		7E989DC825A9F98A00F700BC /* ViewControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,12 +91,12 @@
 				7E989DB725A9F34D00F700BC /* README.md */,
 				7E989D7125A900B400F700BC /* AppDelegate.swift */,
 				7E989D7325A900B400F700BC /* SceneDelegate.swift */,
-				7E989D7525A900B400F700BC /* ViewController.swift */,
-				7E989D7725A900B400F700BC /* Main.storyboard */,
 				7E989D7A25A900B500F700BC /* Assets.xcassets */,
 				7E989D7C25A900B500F700BC /* LaunchScreen.storyboard */,
 				7E989D7F25A900B500F700BC /* Info.plist */,
-				7E989DAA25A90C1700F700BC /* Person.swift */,
+				7E989DBB25A9F58B00F700BC /* Some Feature */,
+				7E989DB825A9F57000F700BC /* Models */,
+				7E989DBE25A9F5C200F700BC /* Networking */,
 			);
 			path = NetworkStackExamples;
 			sourceTree = "<group>";
@@ -102,6 +108,41 @@
 				7E989D8A25A900B500F700BC /* Info.plist */,
 			);
 			path = NetworkStackExamplesTests;
+			sourceTree = "<group>";
+		};
+		7E989DB825A9F57000F700BC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7E989DAA25A90C1700F700BC /* Person.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7E989DBB25A9F58B00F700BC /* Some Feature */ = {
+			isa = PBXGroup;
+			children = (
+				7E989D7725A900B400F700BC /* Main.storyboard */,
+				7E989D7525A900B400F700BC /* ViewController.swift */,
+				7E989DC825A9F98A00F700BC /* ViewControllerViewModel.swift */,
+			);
+			path = "Some Feature";
+			sourceTree = "<group>";
+		};
+		7E989DBE25A9F5C200F700BC /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				7E989DC325A9F88200F700BC /* APIs */,
+				7E989DBF25A9F5D600F700BC /* Networking.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		7E989DC325A9F88200F700BC /* APIs */ = {
+			isa = PBXGroup;
+			children = (
+				7E989DC425A9F89E00F700BC /* SWAPI.swift */,
+			);
+			path = APIs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -120,6 +161,8 @@
 			dependencies = (
 			);
 			name = NetworkStackExamples;
+			packageProductDependencies = (
+			);
 			productName = NetworkStackExamples;
 			productReference = 7E989D6E25A900B400F700BC /* NetworkStackExamples.app */;
 			productType = "com.apple.product-type.application";
@@ -169,6 +212,8 @@
 				Base,
 			);
 			mainGroup = 7E989D6525A900B400F700BC;
+			packageReferences = (
+			);
 			productRefGroup = 7E989D6F25A900B400F700BC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -205,8 +250,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E989DAB25A90C1700F700BC /* Person.swift in Sources */,
+				7E989DC025A9F5D600F700BC /* Networking.swift in Sources */,
 				7E989D7625A900B400F700BC /* ViewController.swift in Sources */,
 				7E989D7225A900B400F700BC /* AppDelegate.swift in Sources */,
+				7E989DC525A9F89E00F700BC /* SWAPI.swift in Sources */,
+				7E989DC925A9F98A00F700BC /* ViewControllerViewModel.swift in Sources */,
 				7E989D7425A900B400F700BC /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -29,46 +29,13 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var people = [Person]()
+    let viewModel = ViewControllerViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        downloadData()
-    }
-
-    func downloadData() {
-        let request = URLRequest(url: URL(string: "https://swapi.dev/api/people")!)
-        
-        URLSession.shared.dataTask(with: request) { [weak self] (data, response, error) in
-
-            guard let data = data, error == nil, let peopleResponse = try? JSONDecoder().decode(PersonResponse.self, from: data) else {
-                return
-            }
-            
-            self?.people = peopleResponse.results
-            
-            DispatchQueue.main.async {
-                self?.tableView.reloadData()
-            }
-        }.resume()
-    }
-    
-    func convertCentimetersToInches(centimeters: Double) -> Double {
-        // 1in = 2.54cm
-        return centimeters / 2.54
-    }
-    
-    func convertInchesToFeet(inches: Double) -> Double {
-        // 1ft = 12in
-        return inches / 12
-    }
-    
-    func formatHeight(height: Double) -> String {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .decimal
-        formatter.maximumFractionDigits = 2
-        return formatter.string(from: NSNumber(value: height)) ?? "ERROR"
+        viewModel.delegate = self
+        viewModel.fetchPeople()
     }
 }
 
@@ -76,19 +43,35 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        people.count
+        viewModel.people.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "basicCell", for: indexPath)
         
-        cell.textLabel?.text = people[indexPath.row].name
+        cell.textLabel?.text = viewModel.people[indexPath.row].name
         
-        let height = people[indexPath.row].height
-        let inches = convertCentimetersToInches(centimeters: Double(height) ?? 0)
-        let feet = convertInchesToFeet(inches: inches)
-        cell.detailTextLabel?.text = "Height: \(formatHeight(height: feet))ft"
+        let height = viewModel.people[indexPath.row].height
+        let inches = viewModel.convertCentimetersToInches(centimeters: Double(height) ?? 0)
+        let feet = viewModel.convertInchesToFeet(inches: inches)
+        cell.detailTextLabel?.text = "Height: \(viewModel.formatHeight(height: feet))ft"
         
         return cell
+    }
+}
+
+// MARK: - ViewControllerViewModelDelegate
+
+extension ViewController: ViewControllerViewModelDelegate {
+    func peopleFetched() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
+    
+    func peopleFetchErrored(error: SWAPIError) {
+        let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
     }
 }
