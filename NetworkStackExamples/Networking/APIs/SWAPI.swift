@@ -34,4 +34,10 @@ extension SWAPI {
             }
         }
     }
+    
+    // More network calls for the StarWars API go here.
+    
+    // Just a thought:
+    // If you have a larger code base. It might make sense to create separare files for endpoints, each having it's own extension.
+    // For eg. SWAPIPeople.swift, SWAPIPlanets.swift, SWAPIStarships.swift. Organise as needed.
 }

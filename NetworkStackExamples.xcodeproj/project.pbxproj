@@ -18,6 +18,8 @@
 		7E989DC025A9F5D600F700BC /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E989DBF25A9F5D600F700BC /* Networking.swift */; };
 		7E989DC525A9F89E00F700BC /* SWAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E989DC425A9F89E00F700BC /* SWAPI.swift */; };
 		7E989DC925A9F98A00F700BC /* ViewControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E989DC825A9F98A00F700BC /* ViewControllerViewModel.swift */; };
+		7E989DDC25AA12E900F700BC /* ViewControllerCommunicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E989DDB25AA12E900F700BC /* ViewControllerCommunicator.swift */; };
+		7E989DE125AA172800F700BC /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E989DE025AA172800F700BC /* String+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		7E989DBF25A9F5D600F700BC /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		7E989DC425A9F89E00F700BC /* SWAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWAPI.swift; sourceTree = "<group>"; };
 		7E989DC825A9F98A00F700BC /* ViewControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerViewModel.swift; sourceTree = "<group>"; };
+		7E989DDB25AA12E900F700BC /* ViewControllerCommunicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerCommunicator.swift; sourceTree = "<group>"; };
+		7E989DE025AA172800F700BC /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +101,7 @@
 				7E989DBB25A9F58B00F700BC /* Some Feature */,
 				7E989DB825A9F57000F700BC /* Models */,
 				7E989DBE25A9F5C200F700BC /* Networking */,
+				7E989DDF25AA171800F700BC /* Extensions */,
 			);
 			path = NetworkStackExamples;
 			sourceTree = "<group>";
@@ -124,6 +129,7 @@
 				7E989D7725A900B400F700BC /* Main.storyboard */,
 				7E989D7525A900B400F700BC /* ViewController.swift */,
 				7E989DC825A9F98A00F700BC /* ViewControllerViewModel.swift */,
+				7E989DDB25AA12E900F700BC /* ViewControllerCommunicator.swift */,
 			);
 			path = "Some Feature";
 			sourceTree = "<group>";
@@ -143,6 +149,14 @@
 				7E989DC425A9F89E00F700BC /* SWAPI.swift */,
 			);
 			path = APIs;
+			sourceTree = "<group>";
+		};
+		7E989DDF25AA171800F700BC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7E989DE025AA172800F700BC /* String+.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,11 +264,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E989DAB25A90C1700F700BC /* Person.swift in Sources */,
+				7E989DE125AA172800F700BC /* String+.swift in Sources */,
 				7E989DC025A9F5D600F700BC /* Networking.swift in Sources */,
 				7E989D7625A900B400F700BC /* ViewController.swift in Sources */,
 				7E989D7225A900B400F700BC /* AppDelegate.swift in Sources */,
 				7E989DC525A9F89E00F700BC /* SWAPI.swift in Sources */,
 				7E989DC925A9F98A00F700BC /* ViewControllerViewModel.swift in Sources */,
+				7E989DDC25AA12E900F700BC /* ViewControllerCommunicator.swift in Sources */,
 				7E989D7425A900B400F700BC /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

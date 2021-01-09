@@ -16,7 +16,6 @@ struct Networking {
     func decodableTask<T: Decodable>(request: URLRequest, decoder: JSONDecoder = JSONDecoder(), completion: @escaping (Result<Response<T>, Error>) -> Void) {
         
         URLSession.shared.dataTask(with: request) { (data, response, error) in
-
             guard let data = data,
                   error == nil,
                   let response = response,
